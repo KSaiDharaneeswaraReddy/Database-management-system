@@ -1,0 +1,75 @@
+mysql> use STUDENT;
+Database changed
+mysql> create table FRESHERS(id int(255),name varchar(255),age int,company varchar(255),salary int);
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> desc FRESHERS;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(255)     | YES  |     | NULL    |       |
+| name    | varchar(255) | YES  |     | NULL    |       |
+| age     | int(11)      | YES  |     | NULL    |       |
+| company | varchar(255) | YES  |     | NULL    |       |
+| salary  | int(11)      | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+5 rows in set (0.02 sec)
+
+mysql> insert into FRESHERS values('101','Ram','25','google','300000');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into FRESHERS values('102','rajesh','20','wipro','100000');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into FRESHERS values('103','steve','21','apple','700000');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into FRESHERS values('104','mahesh','22','infosys','200000');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into FRESHERS values('105','maxy','23','hcl','500000');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from FRESHERS;
++------+--------+------+---------+--------+
+| id   | name   | age  | company | salary |
++------+--------+------+---------+--------+
+|  101 | Ram    |   25 | google  | 300000 |
+|  102 | rajesh |   20 | wipro   | 100000 |
+|  103 | steve  |   21 | apple   | 700000 |
+|  104 | mahesh |   22 | infosys | 200000 |
+|  105 | maxy   |   23 | hcl     | 500000 |
++------+--------+------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select count(name) from FRESHERS;
++-------------+
+| count(name) |
++-------------+
+|           5 |
++-------------+
+1 row in set (0.05 sec)
+
+mysql> select max(salary) from FRESHERS;
++-------------+
+| max(salary) |
++-------------+
+|      700000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select min(salary) from FRESHERS;
++-------------+
+| min(salary) |
++-------------+
+|      100000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(salary) from FRESHERS;
++-------------+
+| sum(salary) |
++-------------+
+|     1800000 |
++-------------+
+1 row in set (0.02 sec)
