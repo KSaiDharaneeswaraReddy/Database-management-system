@@ -1,0 +1,48 @@
+mysql> select * from EMPLOYEE;
++--------+----------+---------+---------+--------+
+| emp_id | emp_name | emp_age | company | salary |
++--------+----------+---------+---------+--------+
+| 101    | suresh   |      25 | wipro   |  40000 |
+| 102    | ramesh   |      30 | infosys |  70000 |
+| 103    | rajesh   |      20 | google  |  90000 |
++--------+----------+---------+---------+--------+
+3 rows in set (0.00 sec)
+
+mysql> DELETE from EMPLOYEE WHERE emp_name='ramesh';
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from EMPLOYEE;
++--------+----------+---------+---------+--------+
+| emp_id | emp_name | emp_age | company | salary |
++--------+----------+---------+---------+--------+
+| 101    | suresh   |      25 | wipro   |  40000 |
+| 103    | rajesh   |      20 | google  |  90000 |
++--------+----------+---------+---------+--------+
+2 rows in set (0.00 sec)
+
+mysql> insert into EMPLOYEE values('103','rajesh','20','google','90000');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from EMPLOYEE;
++--------+----------+---------+---------+--------+
+| emp_id | emp_name | emp_age | company | salary |
++--------+----------+---------+---------+--------+
+| 101    | suresh   |      25 | wipro   |  40000 |
+| 103    | rajesh   |      20 | google  |  90000 |
+| 103    | rajesh   |      20 | google  |  90000 |
++--------+----------+---------+---------+--------+
+3 rows in set (0.00 sec)
+
+mysql> UPDATE EMPLOYEE set  emp_name = 'ramesh',emp_age = '30',company = 'infosys',salary = '70000' where emp_id = '103';
+Query OK, 2 rows affected (0.16 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from EMPLOYEE;
++--------+----------+---------+---------+--------+
+| emp_id | emp_name | emp_age | company | salary |
++--------+----------+---------+---------+--------+
+| 101    | suresh   |      25 | wipro   |  40000 |
+| 103    | ramesh   |      30 | infosys |  70000 |
+| 103    | ramesh   |      30 | infosys |  70000 |
++--------+----------+---------+---------+--------+
+3 rows in set (0.00 sec)
